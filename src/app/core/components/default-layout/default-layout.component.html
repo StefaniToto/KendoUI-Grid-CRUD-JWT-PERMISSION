@@ -1,0 +1,32 @@
+<!-- <app-header [navbarBrandRouterLink]="['/dashboard']" [fixed]="true" [asideMenuToggler]=false
+  [mobileAsideMenuToggler]=false [sidebarToggler]="'lg'" >
+</app-header> -->
+
+{{userisLogged}}
+<header class="header header-6">
+  <div class="bs-example">
+    <nav class="nav nav-pills nav-justified">
+      <a routerLink="/dashboard" class="nav-item nav-link active">
+        <i class="fa fa-home"></i> Home
+      </a>
+      <a *ngIf="!userisLogged" routerLink="/login" class="nav-item nav-link ">
+        <i class="fa fa-home"></i> Log In
+      </a>
+      <a routerLink="/dashboard/exam1/main" class="nav-item nav-link">
+        <i class="fa fa-home"></i> Kendo
+      </a>
+      <a *ngIf="userisLogged" (click)="logout()" class="nav-item nav-link">
+        <i class="fa fa-user"></i> Log Out
+      </a>
+    </nav>
+  </div>
+</header>
+
+
+<div class="app-body">
+  <main class="main">
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
